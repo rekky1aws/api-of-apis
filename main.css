@@ -1,0 +1,95 @@
+a {
+	color: coral;
+	text-decoration: none;
+	font-style: italic;
+}
+
+a:visited {
+	color: firebrick;
+}
+
+body {
+	margin: 0;
+	background-color: #1D1D1D;
+	font-family: Helvetica, sans-serif;
+	color: #EEE;
+}
+
+footer {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	background-color: firebrick;
+	bottom: 0;
+	width: 100%;
+	padding: 15px;
+}
+
+header {
+	background-color: firebrick;
+	padding: 25px;
+	position: fixed;
+	width: 100%;
+	top: 0;
+}
+
+h1 {
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+
+input[type="radio"] {
+	margin: 5px;
+}
+
+main {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 25px;
+	padding: 25px;
+	margin-top: 150px;
+	margin-bottom: 50px;
+}
+
+.menu {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.choice {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+}
+
+.choice	> label {
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+
+.choices-flex {
+	display: flex;
+	gap: 15px;
+
+}
+
+.choices-flex > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.chbx {
+	width: 20px;
+	height: 20px;
+}
+
+.api-card {
+	display: flex;
+	flex-direction: column;
+	background-color: #2c2c2c;
+	padding: 25px;
+}

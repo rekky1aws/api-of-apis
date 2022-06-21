@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script type="text/javascript" src="app.js" defer></script>
+	<title>Choose Your API</title>
+</head>
+<body>
+	<header>
+		<h1>API finder</h1>
+		<div class="menu">
+			<div class="choice">
+				<h2> CORS </h2>
+				<div class="choices-flex">
+					<div>
+						<label for="cors-yes">Yes</label>
+						<input type="radio" name="cors" id="cors-yes" class="chbx refresh" checked>
+					</div>
+					<div>
+						<label for="cors-no">No</label>
+						<input type="radio" name="cors" id="cors-no" class="chbx refresh">
+					</div>
+					<div>
+						<label for="cors-nvm">Nevermind</label>
+						<input type="radio" name="cors" id="cors-nvm" class="chbx refresh">
+					</div>
+				</div>
+			</div>
+
+			<div class="choice">
+				<h2> Auth </h2>
+				<div class="choices-flex">
+					<div>
+						<label for="auth-api-key">API Key</label>
+						<input type="radio" name="auth" id="auth-api-key" class="chbx refresh" checked>
+					</div>
+					<div>
+						<label for="auth-oauth">OAuth</label>
+						<input type="radio" name="auth" id="auth-oauth" class="chbx refresh">
+					</div>
+					<div>
+						<label for="auth-none">None</label>
+						<input type="radio" name="auth" id="auth-none" class="chbx refresh">
+					</div>
+
+					<div>
+						<label for="auth-nvm">Nevermind</label>
+						<input type="radio" name="auth" id="auth-nvm" class="chbx refresh">
+					</div>
+				</div>
+			</div>
+
+			<div class="choice">
+				<h2> HTTPS </h2>
+				<div class="choices-flex">
+					<div>
+						<label for="https-yes">True</label>
+						<input type="radio" name="https" id="https-yes" class="chbx refresh" checked>
+					</div>
+					<div>
+						<label for="https-no">False</label>
+						<input type="radio" name="https" id="https-no" class="chbx refresh">
+					</div>
+					<div>
+						<label for="https-nvm">Nevermind</label>
+						<input type="radio" name="https" id="https-nvm" class="chbx refresh">
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</header>
+
+	<main>
+
+	</main>
+
+	<footer>
+		<button onclick="previousPage();"> < </button>
+		<div id="pages-display">
+			
+		</div>
+		<button onclick="nextPage();"> > </button>
+	</footer>
+</body>
+</html>
