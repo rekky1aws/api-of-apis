@@ -48,8 +48,8 @@ main {
 	grid-template-columns: repeat(2, 1fr);
 	gap: 25px;
 	padding: 25px;
-	margin-top: 150px;
-	margin-bottom: 50px;
+	margin-top: 190px;
+	margin-bottom: 80px;
 }
 
 .api-card {
