@@ -14,16 +14,22 @@ for (var i = 0; i < refreshElts.length; i++) {
 	});
 }
 
-function displayData (dataArr, page=0)
+function displayData (dataArr, pageNum=0)
 {
 	const params = getParams();
-	console.log(params);
-	console.log(page);
 
-	let maxPrint = Math.min((100*page)+100, dataArr.length);
+	const pageButtons = document.getElementsByClassName('page-button');
+	for (var i = 0; i < pageButtons.length; i++) {
+		pageButtons[i].style.backgroundColor = "#4f250a";
+		pageButtons[i].style.color = "#EEE";
+	}
+	pageButtons[pageNum].style.backgroundColor = "#e89a66";
+	pageButtons[pageNum].style.color = "black";
+	
+	let maxPrint = Math.min((100*pageNum)+100, dataArr.length);
 	// console.log(maxPrint);
 	displayDiv.innerHTML="";
-	for (var i = page*100; i < maxPrint; i++) {
+	for (var i = pageNum*100; i < maxPrint; i++) {
 		
 		let shouldDisplay = [false, false, false];
 		
@@ -97,10 +103,10 @@ async function loadAPI ()
 	try {
 		const response = await fetch("https://api.publicapis.org/entries");
 		data = await response.json();
-		console.log(data);
+		// console.log(data);
 
 		for (var i = 0; i < Math.floor(data.count/100) + 1; i++) {
-			pages.innerHTML += `<button onclick="goToPage(${i});">${i+1}</button>`;
+			pages.innerHTML += `<button onclick="goToPage(${i});" class="round-button page-button">${i+1}</button>`;
 		}
 		displayData(data.entries);
 	} catch (e) {
@@ -155,8 +161,6 @@ function getParams ()
 		console.error("Incorrect Value for HTTPS type");
 		isOk = false;
 	}
-
-	console.log(params);
 
 	if (isOk) {
 		return params;

@@ -95,8 +95,13 @@ main {
 }
 
 .round-button {
-	background-color: coral;
+	background-color: #4f250a;
+	color: #EEE;
 	border: none;
 	border-radius: 50%;
 	margin: 5px;
+	font-weight: bold;
+	padding: 5px;
+	width: 30px;
+	height: 30px;
 }
