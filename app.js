@@ -20,14 +20,42 @@ function displayData (dataArr, page=0)
 	console.log(params);
 	console.log(page);
 
-	const maxPrint = Math.min((100*page)+100,dataArr.length);
+	let maxPrint = Math.min((100*page)+100, dataArr.length);
 	// console.log(maxPrint);
-	// for (var i = 0; i < data.length; i++) {
 	displayDiv.innerHTML="";
 	for (var i = page*100; i < maxPrint; i++) {
-		console.log(dataArr[i].Cors);
-		if ( true
-		 ){
+		
+		let shouldDisplay = [false, false, false];
+		
+		if (params.Cors === null) {
+			shouldDisplay[0] = true;
+		} else {
+			if (params.Cors === dataArr[i].Cors)
+			{
+				shouldDisplay[0] = true;
+			}
+		}
+
+		if (params.Auth === null) {
+			shouldDisplay[1] = true;
+		} else {
+			if (params.Auth === dataArr[i].Auth)
+			{
+				shouldDisplay[1] = true;
+			}
+		}
+
+		if (params.HTTPS === null) {
+			shouldDisplay[2] = true;
+		} else {
+			if (params.HTTPS === dataArr[i].HTTPS)
+			{
+				shouldDisplay[2] = true;
+			}
+		}
+
+		if (shouldDisplay[0] && shouldDisplay[1] && shouldDisplay[2])
+		{
 			displayDiv.innerHTML += `
 			<div class="api-card">
 				<div class="api-name">
@@ -88,6 +116,8 @@ function getParams ()
 		"Auth":undefined
 	};
 
+	let isOk = true;
+
 	if (refreshElts[0].checked) {
 		params.Cors = "yes";
 	} else if (refreshElts[1].checked) {
@@ -95,7 +125,9 @@ function getParams ()
 	} else if (refreshElts[2].checked) {
 		params.Cors = null;
 	} else {
+		params.Cors = undefined;
 		console.error("Incorrect Value for CORS type");
+		isOk = false;
 	}
 
 	if (refreshElts[3].checked) {
@@ -107,20 +139,28 @@ function getParams ()
 	} else if (refreshElts[6].checked) {
 		params.Auth = null;
 	} else {
+		params.Auth = undefined;
 		console.error("Incorrect Value for Auth type");
+		isOk = false;
 	}
 
 	if (refreshElts[7].checked) {
-		params.Cors = true;
+		params.HTTPS = true;
 	} else if (refreshElts[8].checked) {
-		params.Cors = false;
+		params.HTTPS = false;
 	} else if (refreshElts[9].checked){
-		params.Cors = null;
+		params.HTTPS = null;
 	} else {
+		params.HTTPS = undefined;
 		console.error("Incorrect Value for HTTPS type");
+		isOk = false;
 	}
 
-	return params;
+	console.log(params);
+
+	if (isOk) {
+		return params;
+	}
 }
 
 function nextPage()
