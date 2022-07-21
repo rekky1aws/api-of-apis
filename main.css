@@ -92,6 +92,7 @@ main {
 .menu {
 	display: flex;
 	justify-content: space-evenly;
+	flex-wrap: wrap;
 }
 
 .round-button {
@@ -104,4 +105,10 @@ main {
 	padding: 5px;
 	width: 30px;
 	height: 30px;
+}
+
+#searchbar {
+	padding: 5px 10px;
+	border-radius: 25px;
+	border: none;
 }
